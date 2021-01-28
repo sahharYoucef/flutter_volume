@@ -149,7 +149,7 @@ class _MyAppState extends State<MyApp> {
         .add(AssetsAudioPlayer.addNotificationOpenAction((notification) {
       return false;
     }));
-    getVolume();
+    // getVolume();
     super.initState();
   }
 
@@ -348,6 +348,7 @@ class _MyAppState extends State<MyApp> {
                       onPlaylistSelected: (myAudios) {
                         _assetsAudioPlayer.open(
                           Playlist(audios: myAudios),
+                          volume: 1.0,
                           showNotification: true,
                           headPhoneStrategy:
                               HeadPhoneStrategy.pauseOnUnplugPlayOnPlug,
@@ -360,6 +361,7 @@ class _MyAppState extends State<MyApp> {
                           await _assetsAudioPlayer.open(
                             myAudio,
                             autoStart: true,
+                            volume: 1.0,
                             showNotification: true,
                             playInBackground: PlayInBackground.enabled,
                             audioFocusStrategy: AudioFocusStrategy.request(
